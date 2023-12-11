@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $phone = $_POST['phone'];
 
     // Save the initial payment details to the database
-    $stmt = $pdo->prepare("INSERT INTO payments (name, amount, status) VALUES (?, ?, 'pending')");
+    $stmt = $pdo->prepare("INSERT INTO tbl_payments (name, amount, status) VALUES (?, ?, 'pending')");
     $stmt->execute([$name, $amount]);
 
     // Initiate M-Pesa payment using Daraja API
